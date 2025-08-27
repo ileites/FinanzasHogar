@@ -5,39 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Gestor de Finanzas</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>💸 Mi Gestor de Finanzas del Hogar</h1>
     </header>
 
-    <main>
-        <section id="transacciones">
-            <h2>Añadir Transacción</h2>
-            <form id="formulario-transaccion">
-                <input type="text" id="descripcion" placeholder="Descripción" required>
-                <input type="number" id="monto" placeholder="Monto" required>
-                <select id="tipo">
-                    <option value="ingreso">Ingreso</option>
-                    <option value="gasto">Gasto</option>
-                </select>
-                <button type="submit">Añadir</button>
-            </form>
-        </section>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li class="active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</li>
+                <li data-page="usuarios"><i class="fas fa-users"></i> Usuarios</li>
+                <li data-page="categorias"><i class="fas fa-tags"></i> Categorías</li>
+                <li data-page="subcategorias"><i class="fas fa-list"></i> Subcategorías</li>
+            </ul>
+        </nav>
 
-        <section id="resumen">
-            <h2>Resumen</h2>
-            <p>Ingresos Totales: <span id="ingresos-total">$0</span></p>
-            <p>Gastos Totales: <span id="gastos-total">$0</span></p>
-            <h3>Saldo Actual: <span id="saldo-actual">$0</span></h3>
-        </section>
-
-        <section id="lista-transacciones">
-            <h2>Historial</h2>
-            <ul id="lista">
-                </ul>
-        </section>
-    </main>
+        <main id="main-content">
+            </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
