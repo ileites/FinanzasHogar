@@ -1,14 +1,16 @@
 // Selecciona los elementos del DOM que necesitamos manipular
-const formulario = document.getElementById('formulario-transaccion');
-const listaTransacciones = document.getElementById('lista');
-const ingresosTotalSpan = document.getElementById('ingresos-total');
-const gastosTotalSpan = document.getElementById('gastos-total');
-const saldoActualSpan = document.getElementById('saldo-actual');
 const mainContent = document.getElementById('main-content');
 const sidebarItems = document.querySelectorAll('.sidebar li');
 
 let transacciones = JSON.parse(localStorage.getItem('transacciones')) || []; // Carga transacciones
 let categorias = JSON.parse(localStorage.getItem('categorias')) || []; // Carga categorías
+
+// Función para guardar los datos en localStorage
+function guardarDatos() {
+    localStorage.setItem('transacciones', JSON.stringify(transacciones));
+    localStorage.setItem('categorias', JSON.stringify(categorias));
+}
+
 
 //funcion para cargar una pagina
 async function loadPage(pageName) {
