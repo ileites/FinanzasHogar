@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#formulario-transaccion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#formulario-transaccion input,
+#formulario-transaccion select,
+#formulario-transaccion button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#lista li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
