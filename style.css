@@ -1,128 +1,54 @@
-body {
-    font-family: 'Consolas', 'Monaco', monospace; /* Fuentes estilo terminal */
-    background-color: #0d1117; /* Fondo muy oscuro, casi negro */
-    color: #e6edf3; /* Texto principal blanco suave */
-    margin: 0;
-    padding: 0;
+/* Nuevo estilo para el contenedor principal */
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-}
-
-header {
-    background-color: #161b22; /* Un tono un poco más claro que el body */
-    color: #00ff00; /* Título en verde neón */
-    padding: 20px;
     width: 100%;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 255, 0, 0.2); /* Sombra con el color de acento */
-}
-
-header h1 {
-    font-size: 2.5em; /* Título más grande */
-    text-shadow: 0 0 8px rgba(0, 255, 0, 0.7); /* Efecto neón en el título */
-}
-
-main {
-    width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
     margin-top: 20px;
 }
 
-section {
-    background-color: #161b22; /* Fondo de las tarjetas, más oscuro */
-    padding: 25px; /* Un poco más de padding */
-    border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.1); /* Sombra sutil con el color neón */
-    margin-bottom: 25px; /* Más espacio entre secciones */
-    border: 1px solid #00ff00; /* Borde verde neón */
+/* Estilo del menú lateral */
+.sidebar {
+    width: 250px;
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.1);
+    margin-right: 20px;
+    border: 1px solid #00ff00;
 }
 
-section h2 {
-    color: #00ff00; /* Títulos de sección en verde neón */
-    margin-bottom: 20px;
-    border-bottom: 1px solid #3e4c5b; /* Separador sutil */
-    padding-bottom: 10px;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-#formulario-transaccion {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-    gap: 15px; /* Más espacio entre los elementos */
-    margin-bottom: 25px;
-}
-
-#formulario-transaccion input,
-#formulario-transaccion select {
-    background-color: #222b37; /* Fondo de los campos de entrada */
-    color: #e6edf3; /* Texto en los campos */
-    padding: 12px;
-    border: 1px solid #00ff00; /* Borde verde neón */
-    border-radius: 5px;
-    flex: 1; /* Para que ocupen el espacio disponible */
-    min-width: 150px; /* Ancho mínimo para que no se hagan demasiado pequeños */
-}
-
-#formulario-transaccion input::placeholder {
-    color: #7b8e9f; /* Color del placeholder */
-}
-
-#formulario-transaccion button {
-    background-color: #00ff00; /* Botón en verde neón */
-    color: #0d1117; /* Texto del botón oscuro */
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
+.sidebar li {
+    padding: 15px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: bold;
-    flex-grow: 0; /* No permitir que crezca si no es necesario */
-    flex-shrink: 0; /* No permitir que se encoja */
-}
-
-#formulario-transaccion button:hover {
-    background-color: #00cc00; /* Un verde un poco más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto sutil al pasar el ratón */
-}
-
-#resumen p {
+    border-radius: 5px;
+    color: #e6edf3;
+    transition: background-color 0.3s, color 0.3s;
     margin-bottom: 10px;
-    font-size: 1.1em;
 }
 
-#resumen h3 {
-    font-size: 1.5em;
-    color: #00ff00; /* Saldo en verde neón */
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+.sidebar li:hover,
+.sidebar li.active {
+    background-color: #00ff00;
+    color: #0d1117;
 }
 
-#lista li {
-    background-color: #1a222c; /* Fondo de cada elemento de la lista */
-    padding: 12px;
-    border-bottom: 1px solid #3e4c5b; /* Separador sutil */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.sidebar li i {
+    margin-right: 10px;
+    color: #00ff00;
 }
 
-#lista li:last-child {
-    border-bottom: none; /* Eliminar el borde del último elemento */
+.sidebar li:hover i,
+.sidebar li.active i {
+    color: #0d1117;
 }
 
-#lista li span {
-    font-family: 'Consolas', 'Monaco', monospace;
-}
-
-.ingreso {
-    color: #00ff00; /* Texto de ingreso en verde neón */
-    font-weight: bold;
-}
-
-.gasto {
-    color: #e74c3c; /* Texto de gasto en rojo */
-    font-weight: bold;
+/* Estilo para el contenido principal */
+#main-content {
+    flex-grow: 1; /* Permite que ocupe todo el espacio restante */
 }
