@@ -5,7 +5,14 @@ const ingresosTotalSpan = document.getElementById('ingresos-total');
 const gastosTotalSpan = document.getElementById('gastos-total');
 const saldoActualSpan = document.getElementById('saldo-actual');
 
-let transacciones = []; // Array para almacenar todas las transacciones
+let transacciones = JSON.parse(localStorage.getItem('transacciones')) || []; // Carga transacciones
+let categorias = JSON.parse(localStorage.getItem('categorias')) || []; // Carga categorías
+
+// Función para guardar los datos en localStorage
+function guardarDatos() {
+    localStorage.setItem('transacciones', JSON.stringify(transacciones));
+    localStorage.setItem('categorias', JSON.stringify(categorias));
+}
 
 // Función para actualizar los totales y el saldo
 function actualizarTotales() {
@@ -41,17 +48,22 @@ formulario.addEventListener('submit', (e) => {
     const descripcion = document.getElementById('descripcion').value;
     const monto = document.getElementById('monto').value;
     const tipo = document.getElementById('tipo').value;
+    const categoria = document.getElementById('categoria').value;
 
     if (descripcion && monto) {
         const nuevaTransaccion = {
             descripcion,
             monto: parseFloat(monto),
-            tipo
+            tipo,
+            categoria // Asumiendo que ya agregaste esto
         };
 
         transacciones.push(nuevaTransaccion);
+        guardarDatos();
         mostrarTransaccion(nuevaTransaccion);
+        
         actualizarTotales();
+        
 
         // Limpiar el formulario
         formulario.reset();
@@ -59,4 +71,14 @@ formulario.addEventListener('submit', (e) => {
 });
 
 // Inicializar la aplicación
-actualizarTotales();
+// actualizarTotales();
+
+
+// Función para mostrar las transacciones al cargar la página
+function cargarTransacciones() {
+    transacciones.forEach(mostrarTransaccion);
+    actualizarTotales();
+}
+
+// Llama a la función al iniciar la app
+cargarTransacciones();
