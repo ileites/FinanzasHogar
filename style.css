@@ -1,12 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Consolas', 'Monaco', monospace; /* Fuentes estilo terminal */
+    background-color: #0d1117; /* Fondo muy oscuro, casi negro */
+    color: #e6edf3; /* Texto principal blanco suave */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
 }
 
 header {
