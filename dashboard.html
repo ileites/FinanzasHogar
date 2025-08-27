@@ -1,1 +1,34 @@
 
+<section id="transacciones">
+    <h2>Añadir Transacción</h2>
+    <form id="formulario-transaccion">
+        <input type="text" id="descripcion" placeholder="Descripción" required>
+        <input type="number" id="monto" placeholder="Monto" required>
+        <select id="tipo">
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select>
+        <select id="categoria">
+            <option value="">Seleccionar Categoría</option>
+            <option value="comida">Comida</option>
+            <option value="transporte">Transporte</option>
+            <option value="ocio">Ocio</option>
+            <option value="servicios">Servicios</option>
+            <option value="otros">Otros</option>
+        </select>
+        <button type="submit">Añadir</button>
+    </form>
+</section>
+
+<section id="resumen">
+    <h2>Resumen</h2>
+    <p>Ingresos Totales: <span id="ingresos-total">$0</span></p>
+    <p>Gastos Totales: <span id="gastos-total">$0</span></p>
+    <h3>Saldo Actual: <span id="saldo-actual">$0</span></h3>
+</section>
+
+<section id="lista-transacciones">
+    <h2>Historial</h2>
+    <ul id="lista">
+        </ul>
+</section>
