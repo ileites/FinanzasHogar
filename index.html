@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Gestor de Finanzas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💸 Mi Gestor de Finanzas del Hogar</h1>
+    </header>
+
+    <main>
+        <section id="transacciones">
+            <h2>Añadir Transacción</h2>
+            <form id="formulario-transaccion">
+                <input type="text" id="descripcion" placeholder="Descripción" required>
+                <input type="number" id="monto" placeholder="Monto" required>
+                <select id="tipo">
+                    <option value="ingreso">Ingreso</option>
+                    <option value="gasto">Gasto</option>
+                </select>
+                <button type="submit">Añadir</button>
+            </form>
+        </section>
+
+        <section id="resumen">
+            <h2>Resumen</h2>
+            <p>Ingresos Totales: <span id="ingresos-total">$0</span></p>
+            <p>Gastos Totales: <span id="gastos-total">$0</span></p>
+            <h3>Saldo Actual: <span id="saldo-actual">$0</span></h3>
+        </section>
+
+        <section id="lista-transacciones">
+            <h2>Historial</h2>
+            <ul id="lista">
+                </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
